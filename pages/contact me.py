@@ -10,7 +10,8 @@ with st.form(key="email_form"):
     user_message = st.text_area("Your message")
     message = f"""\
 Subject: New email from Streamlit Portfolio
-{user_message} from {user_email}
+{user_message} 
+from {user_email}
 """
     button = st.form_submit_button("Submit")
     if button:
