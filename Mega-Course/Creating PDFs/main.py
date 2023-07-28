@@ -35,3 +35,4 @@ for index, rows in df.iterrows():
             pdf.line(10, i, 200, i)
 
 pdf.output("name.pdf")
+ 
