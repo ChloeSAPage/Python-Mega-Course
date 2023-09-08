@@ -1,1 +1,1 @@
-Using the libraries request, selectorlib
+Using multiple libraries and SQLite to scrape tour dates from the website 'http://programmer100.pythonanywhere.com/tours/'
