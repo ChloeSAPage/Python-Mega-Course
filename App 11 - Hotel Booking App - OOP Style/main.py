@@ -29,10 +29,10 @@ class ReservationTicket:
 
     def generate(self):
         content = f"""
-Here is your booking data:
-Name: {self.customer_name}
-Hotel name: {self.hotel.name}      
-"""
+        Here is your booking data:
+        Name: {self.customer_name}
+        Hotel name: {self.hotel.name}      
+        """
         return content
 
 class CreditCard():
