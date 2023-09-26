@@ -1,13 +1,16 @@
 from datetime import datetime
 from flask import Flask, render_template, request, flash
 from flask_sqlalchemy import SQLAlchemy
+from flask_mail import Mail, Message
 
 
 app = Flask(__name__)
 
 app.config.from_pyfile("config.py")
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///data.db"
+
 db = SQLAlchemy(app)
+
+mail = Mail(app)
 
 
 class Form(db.Model):
@@ -33,6 +36,12 @@ def index():
                     email=email, date=date_obj, occupation=occupation)
         db.session.add(form)
         db.session.commit()
+        message_body =f"Thank you for your submission, {first_name}.\n"\
+                    f"Here is your data:\n{first_name}\n{last_name}\n{date}\n{occupation}"
+        message = Message(subject="New Form submission", sender=app.config["MAIL_USERNAME"],
+                        recipients=[email], body=message_body)
+        mail.send(message)
+        
         flash(f"{first_name}, your form was submitted successfully!", "success")
     
     return render_template("index.html")
