@@ -1,8 +1,8 @@
 FILEPATH = "ToDoList.txt"
 
 def get_todos(filepath= "ToDoList.txt"):
-     """Read the file and returns the list of ToDos """
-     with open(filepath, "r") as file_local:
+    """Read the file and returns the list of ToDos """
+    with open(filepath, "r") as file_local:
         todo_list_local = file_local.readlines()
         return todo_list_local
 
@@ -13,7 +13,7 @@ def write_todos(todo_list_arg, filepath= "ToDoList.txt"):
 
 def show_todo(todo_list):
     """Shows the ToDoList from the file then numbers
-       and capitalises each ToDo"""
+    and capitalises each ToDo"""
     print("Here is the List of ToDos:")
     for index, item in enumerate(todo_list):
             item =  item.strip("\n")

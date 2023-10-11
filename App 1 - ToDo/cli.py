@@ -73,19 +73,11 @@ while True :
             print("Please Enter the number of the ToDo you wish to complete")
             continue
         except IndexError:
-             print("There is no ToDo with that number")
-             continue
+            print("There is no ToDo with that number")
+            continue
 
     elif user_action.startswith ("exit"):
         print("Goodbye")
         break
     else:
-        print("Unknown Entry") 
-        
-        
-
-
-
-
-
-
+        print("Unknown Entry")

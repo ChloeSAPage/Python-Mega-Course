@@ -20,9 +20,9 @@ complete_ = sg.Button("Complete")
 exit_ = [sg.Button("Exit")]
 
 window = sg.Window("My ToDo App",
-                   layout=[clock, add_,
-                    [list_box, edit_ , complete_], exit_], 
-                    font=("Comic Sans", 12))
+                layout=[clock, add_,
+                        [list_box, edit_ , complete_], exit_], 
+                font=("Comic Sans", 12))
 
 while True:
     button, values = window.read(timeout=200)
@@ -60,6 +60,6 @@ while True:
         case "todo_list":
             window["todo"].update(value=values["todo_list"][0])
         case sg.WIN_CLOSED:
-          break
+            break
 
 window.close()

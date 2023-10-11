@@ -10,14 +10,14 @@ while True :
                 todo_list = file.readlines()
 
             todo_list.append(todo)
-       
+            
             with open("ToDoList.txt", "w") as file:
                 file.writelines(todo_list)
         
         case "show":
             with open("ToDoList.txt", "r") as file:
-               todo_list = file.readlines()
-               print("Here is the List of ToDos:")
+                todo_list = file.readlines()
+                print("Here is the List of ToDos:")
             
             #numbering each ToDo, removing the break line and print
             for index, item in enumerate(todo_list):
@@ -26,7 +26,7 @@ while True :
         case "edit":
             #"show" case here as well for user knowledge
             with open("ToDoList.txt", "r") as file:
-               todo_list = file.readlines()
+                todo_list = file.readlines()
 
             print("Here is the List of ToDos:")
             for index, item in enumerate(todo_list):
@@ -43,7 +43,7 @@ while True :
                     new_todo = input("Enter new ToDo: ") + "\n"
                     
                     with open("ToDoList.txt", "r") as file:
-                         todo_list = file.readlines()
+                        todo_list = file.readlines()
 
                     todo_list[number] = new_todo
                     
@@ -53,17 +53,17 @@ while True :
                 case "no":
                     continue
         case "complete":
-           #"show" case for user knowledge
+        #"show" case for user knowledge
             with open("ToDoList.txt", "r") as file:
-               todo_list = file.readlines()
-               print("Here is the List of ToDos:")
-           
+                todo_list = file.readlines()
+                print("Here is the List of ToDos:")
+                
             for index, item in enumerate(todo_list):
                 item =  item.strip("\n")
                 print(f"{(index)+1}. {item.capitalize()}")
             
             number = int(input("Number of To Do you wish to complete: ")) - 1
-           
+            
             print(f"Do you wish to complete {todo_list[number].strip().capitalize()}?")
             todo_to_remove = todo_list[number].strip().capitalize()
             yes_no = input()
