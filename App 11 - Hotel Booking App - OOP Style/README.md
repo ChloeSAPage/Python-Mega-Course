@@ -1,3 +1,3 @@
 # Hotel Booking App
 
-OOP
+Using OOP, this app is a prototype for reserving and booking hotels.
