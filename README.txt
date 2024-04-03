@@ -1,2 +1,1 @@
-Using multiple modules such as pandas and fdpf 
-to create PDF Invoices from excel files.
+All Projects created while following "Python Mega Course: Learn Python in 60 Days, Build 20 Apps" Udemy course.
